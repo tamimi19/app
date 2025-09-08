@@ -1,0 +1,14 @@
+# ملفات البناء والمخرجات
+*.apk
+*.ap_
+*.aab
+*.dex
+*.class
+.gradle/
+build/
+
+# ملفات نظام التطوير
+.local.properties
+/*.iml
+/.idea/
+/captures/
