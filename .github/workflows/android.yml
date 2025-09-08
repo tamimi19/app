@@ -8,8 +8,8 @@ on:
 
 jobs:
   build:
-    # استخدام أحدث نسخة من Ubuntu
-    runs-on: ubuntu-latest
+      # استخدام أحدث نسخة من Ubuntu
+        runs-on: ubuntu-latest
 
     steps:
       # 1. سحب الكود من المستودع
@@ -27,8 +27,8 @@ jobs:
           java-version: '17'
 
       # --- الجزء الخاص بتوليد الـWrapper بدون كمبيوتر محلي ---
-      # 3. تنزيل Gradle 8.2 بشكل مؤقت
-      - name: Download Gradle 8.2 temporarily
+      # 3. تنزيل Gradle 8.13 بشكل مؤقت
+      - name: Download Gradle 8.13 temporarily
         run: wget https://services.gradle.org/distributions/gradle-8.2-bin.zip
 
       # 4. فك ضغط ملف Gradle المؤقت
@@ -53,5 +53,5 @@ jobs:
       - name: Upload APK Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: font-debug-apk
-          path: app/build/outputs/apk/debug/app-debug.apk
+        name: font-debug-apk
+        path: app/build/outputs/apk/debug/app-debug.apk
