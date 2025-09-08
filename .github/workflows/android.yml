@@ -6,7 +6,7 @@ on:
     branches: [ main ]
   workflow_dispatch:
 
-jobs:
+  jobs:
   build:
       # استخدام أحدث نسخة من Ubuntu
         runs-on: ubuntu-latest
