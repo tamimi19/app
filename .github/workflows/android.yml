@@ -22,33 +22,29 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
-      # Use project-local Gradle cache to avoid runner permission/corrupt-cache issues
       - name: Use project-local Gradle cache
         run: echo "GRADLE_USER_HOME=$GITHUB_WORKSPACE/.gradle" >> $GITHUB_ENV
 
-      # Clear potentially corrupt Gradle jars cache from runner (safe)
       - name: Clear possibly corrupt Gradle jars cache
         run: rm -rf ~/.gradle/caches/jars-9 || true
 
-      - name: Download Gradle 8.13 temporarily
-        run: wget https://services.gradle.org/distributions/gradle-8.13-bin.zip -O gradle-8.13-bin.zip
+      - name: Download Gradle 8.2 temporarily
+        run: wget https://services.gradle.org/distributions/gradle-8.2-bin.zip -O gradle-8.2-bin.zip
 
       - name: Unzip temporary Gradle
-        run: unzip -q gradle-8.13-bin.zip
+        run: unzip -q gradle-8.2-bin.zip
 
-      # Generate wrapper using the temporary Gradle; use no-daemon + stacktrace for clearer errors
       - name: Generate project's Gradle Wrapper files
-        run: ./gradle-8.13/bin/gradle wrapper --gradle-version 8.13 --distribution-type all --no-daemon --stacktrace
+        run: ./gradle-8.2/bin/gradle wrapper --gradle-version 8.2 --distribution-type all
 
       - name: Make gradlew executable
         run: chmod +x ./gradlew
 
-      # Build using the generated wrapper, using project-local cache (from GITHUB_ENV)
       - name: Build APK with Gradle Wrapper
-        run: ./gradlew assembleDebug --no-daemon --stacktrace
+        run: ./gradlew assembleDebug
 
       - name: Upload APK Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: oneui-debug-apk
+          name: font-debug-apk
           path: app/build/outputs/apk/debug/app-debug.apk
