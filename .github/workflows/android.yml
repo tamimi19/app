@@ -1,6 +1,5 @@
 name: Generate Wrapper & Build APK (No Local PC)
 
-# متى يتم تشغيل الـWorkflow
 on:
   push:
     branches: [ main ]
@@ -8,50 +7,48 @@ on:
 
 jobs:
   build:
-    # استخدام أحدث نسخة من Ubuntu
     runs-on: ubuntu-latest
 
     steps:
-      # 1. سحب الكود من المستودع
       - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Install Maturin
         run: pip install maturin
 
-      # 2. إعداد بيئة جافا (JDK)
       - name: Set up JDK 17
         uses: actions/setup-java@v4
         with:
           distribution: 'temurin'
           java-version: '17'
 
-      # --- الجزء الخاص بتوليد الـWrapper بدون كمبيوتر محلي ---
-      # 3. تنزيل Gradle 8.13 بشكل مؤقت
+      # Use project-local Gradle cache to avoid runner permission/corrupt-cache issues
+      - name: Use project-local Gradle cache
+        run: echo "GRADLE_USER_HOME=$GITHUB_WORKSPACE/.gradle" >> $GITHUB_ENV
+
+      # Clear potentially corrupt Gradle jars cache from runner (safe)
+      - name: Clear possibly corrupt Gradle jars cache
+        run: rm -rf ~/.gradle/caches/jars-9 || true
+
       - name: Download Gradle 8.13 temporarily
-        run: wget https://services.gradle.org/distributions/gradle-8.2-bin.zip
+        run: wget https://services.gradle.org/distributions/gradle-8.13-bin.zip -O gradle-8.13-bin.zip
 
-      # 4. فك ضغط ملف Gradle المؤقت
       - name: Unzip temporary Gradle
-        run: unzip gradle-8.2-bin.zip
+        run: unzip -q gradle-8.13-bin.zip
 
-      # 5. استخدام Gradle المؤقت لتوليد ملفات الـWrapper الخاصة بمشروعك
+      # Generate wrapper using the temporary Gradle; use no-daemon + stacktrace for clearer errors
       - name: Generate project's Gradle Wrapper files
-        run: ./gradle-8.2/bin/gradle wrapper --gradle-version 8.2 --distribution-type all
-      # --- نهاية جزء التوليد ---
+        run: ./gradle-8.13/bin/gradle wrapper --gradle-version 8.13 --distribution-type all --no-daemon --stacktrace
 
-      # الآن بعد أن تم إنشاء ملفات الـWrapper، نستخدمها لبناء المشروع
-      # 6. إعطاء صلاحية التنفيذ لملف gradlew الذي تم توليده
       - name: Make gradlew executable
         run: chmod +x ./gradlew
 
-      # 7. بناء التطبيق باستخدام الـWrapper الخاص بالمشروع
+      # Build using the generated wrapper, using project-local cache (from GITHUB_ENV)
       - name: Build APK with Gradle Wrapper
-        run: ./gradlew assembleDebug
+        run: ./gradlew assembleDebug --no-daemon --stacktrace
 
-      # 8. رفع ملف الـAPK الناتج
       - name: Upload APK Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: font-debug-apk
+          name: oneui-debug-apk
           path: app/build/outputs/apk/debug/app-debug.apk
