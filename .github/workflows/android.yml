@@ -1,7 +1,7 @@
 name: Generate Wrapper & Build APK (No Local PC)
 
 # متى يتم تشغيل الـWorkflow
-on:
+  on:
   push:
     branches: [ main ]
   workflow_dispatch:
