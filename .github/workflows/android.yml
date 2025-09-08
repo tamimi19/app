@@ -1,15 +1,15 @@
 name: Generate Wrapper & Build APK (No Local PC)
 
-     # متى يتم تشغيل الـWorkflow
-  on:
+# متى يتم تشغيل الـWorkflow
+on:
   push:
-  branches: [ main ]
+    branches: [ main ]
   workflow_dispatch:
 
-  jobs:
+jobs:
   build:
-      # استخدام أحدث نسخة من Ubuntu
-        runs-on: ubuntu-latest
+    # استخدام أحدث نسخة من Ubuntu
+    runs-on: ubuntu-latest
 
     steps:
       # 1. سحب الكود من المستودع
@@ -53,5 +53,5 @@ name: Generate Wrapper & Build APK (No Local PC)
       - name: Upload APK Artifact
         uses: actions/upload-artifact@v4
         with:
-        name: font-debug-apk
-        path: app/build/outputs/apk/debug/app-debug.apk
+          name: font-debug-apk
+          path: app/build/outputs/apk/debug/app-debug.apk
