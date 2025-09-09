@@ -15,7 +15,7 @@ android {
     }
     buildTypes {
         release {
-            // Release signing يمكن إضافة الإعدادات إن وجدت
+            // يمكن إضافة إعدادات التوقيع إن وجدت
             minifyEnabled false
         }
     }
