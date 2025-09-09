@@ -34,5 +34,5 @@ dependencies {
     implementation "androidx.constraintlayout:constraintlayout:2.1.4"
     
     // One UI Project Library (الصيغة الصحيحة حسب التوثيق الرسمي)
-    implementation 'com.github.OneUIProject:design:4.0.1'
+    implementation 'com.github.OneUIProject:design:4.2.0'
 }
