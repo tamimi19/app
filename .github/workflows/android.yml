@@ -42,6 +42,7 @@ jobs:
 
       - name: Build APK with Gradle Wrapper
         run: ./gradlew assembleDebug
+        # --- هذا هو الجزء المهم الذي يحل مشكلة المصادقة مع JitPack ---
         env:
           # This maps the GitHub secrets to Gradle properties
           ORG_GRADLE_PROJECT_jitpack.username: ${{ secrets.JITPACK_USERNAME }}
