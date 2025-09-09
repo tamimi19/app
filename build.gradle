@@ -1,17 +1,7 @@
-buildscript {
-    repositories {
-        google()
-        mavenCentral()
-    }
-    dependencies {
-        // استخدم أحدث نسخة من Android Gradle Plugin متوافقة مع Gradle 8.x
-        classpath "com.android.tools.build:gradle:8.13.0"
-    }
-}
-
-allprojects {
-    repositories {
-        google()
-        mavenCentral()
-    }
+// This is the root build.gradle file.
+// In modern Gradle, this file is often minimal.
+// We declare plugins here and apply them in module-level build files.
+plugins {
+    // Apply the Android Application plugin to subprojects, not the root.
+    id("com.android.application") version "8.3.2" apply false
 }
