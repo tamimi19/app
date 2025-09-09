@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace 'com.example.oneui'
-    compileSdk 35 // The SDK version to compile against
+    compileSdk 34 // The SDK version to compile against
 
     defaultConfig {
         applicationId "com.example.oneui"
