@@ -1,1 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
 
+    <!-- ثيم التطبيق الرئيسي يعتمد على AppCompat Light -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- ألوان الثيم -->
+        <item name="colorPrimary">@color/primaryColor</item>
+        <item name="colorPrimaryDark">@color/primaryDarkColor</item>
+        <item name="colorAccent">@color/accentColor</item>
+        <!-- خلفية عامة للتطبيق -->
+        <item name="android:windowBackground">@color/backgroundColor</item>
+    </style>
+
+</resources>
