@@ -28,14 +28,14 @@ jobs:
       - name: Clear possibly corrupt Gradle jars cache
         run: rm -rf ~/.gradle/caches/jars-9 || true
 
-      - name: Download Gradle 8.2 temporarily
-        run: wget https://services.gradle.org/distributions/gradle-8.2-bin.zip -O gradle-8.2-bin.zip
+      - name: Download Gradle 8.13 temporarily
+        run: wget https://services.gradle.org/distributions/gradle-8.13-bin.zip -O gradle-8.13-bin.zip
 
       - name: Unzip temporary Gradle
-        run: unzip -q gradle-8.2-bin.zip
+        run: unzip -q gradle-8.13-bin.zip
 
       - name: Generate project's Gradle Wrapper files
-        run: ./gradle-8.2/bin/gradle wrapper --gradle-version 8.2 --distribution-type all
+        run: ./gradle-8.13/bin/gradle wrapper --gradle-version 8.13 --distribution-type all
 
       - name: Make gradlew executable
         run: chmod +x ./gradlew
@@ -46,5 +46,5 @@ jobs:
       - name: Upload APK Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: font-debug-apk
+          name: oneui-debug-apk
           path: app/build/outputs/apk/debug/app-debug.apk
