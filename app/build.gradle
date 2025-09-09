@@ -5,12 +5,12 @@ plugins {
 
 android {
     namespace 'com.example.oneui'
-    compileSdk 34 // The SDK version to compile against
+    compileSdk 34
 
     defaultConfig {
         applicationId "com.example.oneui"
-        minSdk 24 // Minimum SDK version supported
-        targetSdk 35 // Target SDK version for the app
+        minSdk 24
+        targetSdk 35
         versionCode 1
         versionName "1.0"
     }
@@ -21,7 +21,6 @@ android {
         }
     }
 
-    // It's good practice to specify compile options
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -34,9 +33,6 @@ dependencies {
     implementation "com.google.android.material:material:1.8.0"
     implementation "androidx.constraintlayout:constraintlayout:2.1.4"
     
-    // One UI Project Libraries
-    // 'oneui-core' is the base library
-    implementation 'com.github.OneUIProject.oneui-design:oneui-core:4.6.1'
-    // 'oneui-widgets' contains the custom widgets, this is the correct dependency
-    implementation 'com.github.OneUIProject.oneui-design:oneui-widgets:4.6.1'
+    // One UI Project Library (الصيغة الصحيحة حسب التوثيق الرسمي)
+    implementation 'com.github.OneUIProject:oneui-design:4.6.1'
 }
