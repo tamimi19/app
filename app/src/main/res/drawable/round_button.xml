@@ -1,1 +1,7 @@
-
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <!-- جعل الزاوية مستديرة -->
+    <corners android:radius="20dp" />  <!-- مثال: 20dp لنصف دائرية لطيفة -->
+    <solid android:color="@color/primaryColor" />
+</shape>
