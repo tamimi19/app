@@ -22,7 +22,12 @@ android {
 }
 
 dependencies {
+    // Other dependencies...
     implementation "androidx.appcompat:appcompat:1.6.1"
     implementation "com.google.android.material:material:1.8.0"
     implementation "androidx.constraintlayout:constraintlayout:2.1.4"
+    
+    // أضف المكتبات التالية
+    implementation 'com.github.OneUIProject:oneui-core:0.4.1'
+    implementation 'com.github.OneUIProject:oneui-design:0.4.1'
 }
