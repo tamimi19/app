@@ -29,6 +29,14 @@ android {
 }
 
 dependencies {
-    // ...
-    implementation 'io.github.oneuiproject:design:<version>'
+    // Standard Android libraries
+    implementation "androidx.appcompat:appcompat:1.6.1"
+    implementation "com.google.android.material:material:1.8.0"
+    implementation "androidx.constraintlayout:constraintlayout:2.1.4"
+    
+    // One UI Project Libraries
+    // 'oneui-core' is the base library
+    implementation 'com.github.OneUIProject.oneui-design:oneui-core:4.6.1'
+    // 'oneui-widgets' contains the custom widgets, this is the correct dependency
+    implementation 'com.github.OneUIProject.oneui-design:oneui-widgets:4.6.1'
 }
