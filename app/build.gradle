@@ -1,31 +1,42 @@
+// Apply the application plugin for Android
 plugins {
     id 'com.android.application'
 }
 
 android {
     namespace 'com.example.oneui'
-    compileSdk 35
+    compileSdk 35 // The SDK version to compile against
 
     defaultConfig {
         applicationId "com.example.oneui"
-        minSdk 24
-        targetSdk 35
+        minSdk 24 // Minimum SDK version supported
+        targetSdk 35 // Target SDK version for the app
         versionCode 1
         versionName "1.0"
     }
+
     buildTypes {
         release {
             minifyEnabled false
         }
     }
+
+    // It's good practice to specify compile options
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 
 dependencies {
+    // Standard Android libraries
     implementation "androidx.appcompat:appcompat:1.6.1"
     implementation "com.google.android.material:material:1.8.0"
     implementation "androidx.constraintlayout:constraintlayout:2.1.4"
     
-    // المكتبات الخاصة بـ One UI (تم تصحيح الاسم والإصدار)
+    // One UI Project Libraries
+    // 'oneui-core' is the base library
     implementation 'com.github.OneUIProject.oneui-design:oneui-core:4.6.1'
-    implementation 'com.github.OneUIProject.oneui-design:oneui-design:4.6.1'
+    // 'oneui-widgets' contains the custom widgets, this is the correct dependency
+    implementation 'com.github.OneUIProject.oneui-design:oneui-widgets:4.6.1'
 }
