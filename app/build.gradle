@@ -25,7 +25,7 @@ dependencies {
     implementation "com.google.android.material:material:1.8.0"
     implementation "androidx.constraintlayout:constraintlayout:2.1.4"
     
-    // المكتبات الخاصة بـ One UI
-    implementation 'com.github.OneUIProject:oneui-core:0.4.1'
-    implementation 'com.github.OneUIProject:oneui-design:0.4.1'
+    // المكتبات الخاصة بـ One UI (تم تصحيح الاسم والإصدار)
+    implementation 'com.github.OneUIProject.oneui-design:oneui-core:4.6.1'
+    implementation 'com.github.OneUIProject.oneui-design:oneui-design:4.6.1'
 }
