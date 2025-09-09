@@ -2,11 +2,12 @@ rootProject.name = "OneUIExample"
 include ':app'
 
 dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.PREFER_SETTINGS)
+    // تم تغيير هذا السطر إلى الخيار الأفضل لمنع الأخطاء
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
         google()
         mavenCentral()
-        // هذا هو المستودع الضروري
+        // هذا هو المستودع الضروري لمكتبة OneUI
         maven { url 'https://jitpack.io' }
     }
 }
