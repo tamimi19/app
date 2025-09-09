@@ -1,13 +1,25 @@
-rootProject.name = "OneUIExample"
-include ':app'
+// This file manages settings for the entire project.
 
+// Centralized management for plugin versions
+pluginManagement {
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal() // Recommended for Gradle plugins
+    }
+}
+
+// Centralized management for project dependencies repositories
 dependencyResolutionManagement {
-    // تم تغيير هذا السطر إلى الخيار الأفضل لمنع الأخطاء
+    // Enforce that all repositories are declared here
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
         google()
         mavenCentral()
-        // هذا هو المستودع الضروري لمكتبة OneUI
+        // JitPack repository is required for the OneUI Design library
         maven { url 'https://jitpack.io' }
     }
 }
+
+rootProject.name = "OneUIExample"
+include ':app'
