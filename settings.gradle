@@ -17,9 +17,17 @@ dependencyResolutionManagement {
         google()
         mavenCentral()
         // JitPack repository is required for the OneUI Design library
-        maven { url 'https://jitpack.io' }
+        // Adding credentials to authenticate with private repositories
+        maven {
+            url 'https://jitpack.io'
+            credentials {
+                username = 'x-access-token'
+                password = System.getenv("ACCESS_TOKEN")
+            }
+        }
     }
 }
 
 rootProject.name = "OneUIExample"
 include ':app'
+
