@@ -52,4 +52,6 @@ dependencies {
 
     // مكتبة التخطيط ConstraintLayout
     implementation "androidx.constraintlayout:constraintlayout:2.2.1"
+
+    implementation 'io.github.oneuiproject.sesl:material:1.5.0'
 }
