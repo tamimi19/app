@@ -3,7 +3,7 @@
 
     <!-- ثيم التطبيق الرئيسي يعتمد على AppCompat Light -->
     <resources>
-    <style name="OneUITheme.DayNight" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- خصائص الثيم هنا -->
     </style>
 </resources>
