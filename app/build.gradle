@@ -29,7 +29,7 @@ android {
 
 dependencies {
     // تم استبدال المكتبات الأساسية بمكتبات One UI Project
-    implementation 'io.github.oneuiproject:core:1.3.0'
+    implementation 'io.github.oneuiproject:core:1.4.0'
     implementation 'io.github.oneuiproject:design:1.2.6'
     
     // احتفظ بالمكتبات التي لا تتعارض
