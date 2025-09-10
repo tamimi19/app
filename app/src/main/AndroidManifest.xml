@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
     <application
         android:label="@string/app_name"
-        android:theme="@style/OneUITheme">
+        android:theme="@style/OneUIThemeDayNight">
         <activity
             android:name=".MainActivity"
             android:exported="true">
