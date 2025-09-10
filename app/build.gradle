@@ -40,19 +40,16 @@ android {
 }
 
 dependencies {
-    // إضافة SESL appcompat لحل مشكلة الثيم
+    // SESL (One UI) libraries
     implementation 'io.github.oneuiproject.sesl:appcompat:1.4.0'
-
-    // مكتبات One UI الأساسية
     implementation 'io.github.oneuiproject.sesl:core:1.3.0'
-
-    // مكتبة أيقونات One UI (اختياري لتحسين الواجهة)
-    implementation 'io.github.oneuiproject:icons:1.1.0'
-
-    // مكتبة التخطيط ConstraintLayout
-    implementation "androidx.constraintlayout:constraintlayout:2.2.1"
-
+    implementation 'io.github.oneuiproject.sesl:customview:1.1.0' // يحوي widgets مخصصة (مثل com.oneui.widget.TextView)
     implementation 'io.github.oneuiproject.sesl:material:1.5.0'
 
+    // One UI icons / design
+    implementation 'io.github.oneuiproject:icons:1.1.0'
     implementation 'io.github.oneuiproject:design:1.2.6'
+
+    // ConstraintLayout
+    implementation "androidx.constraintlayout:constraintlayout:2.2.1"
 }
