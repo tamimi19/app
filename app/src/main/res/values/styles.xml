@@ -2,7 +2,7 @@
 <resources>
 
     <!-- ثيم التطبيق الرئيسي يعتمد على AppCompat Light -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="DatePickerTheme" parent="@style/Widget.AppCompat.Light.DatePicker" />
         <!-- ألوان الثيم -->
         <item name="colorPrimary">@color/primaryColor</item>
         <item name="colorPrimaryDark">@color/primaryDarkColor</item>
