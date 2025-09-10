@@ -3,7 +3,7 @@
 
     <!-- ثيم التطبيق الرئيسي يعتمد على AppCompat Light -->
     <resources>
-     android:theme="@style/OneUIThemeDayNight">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- خصائص الثيم هنا -->
     </style>
 </resources>
