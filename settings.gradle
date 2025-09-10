@@ -21,7 +21,7 @@ dependencyResolutionManagement {
         maven {
             url 'https://jitpack.io'
             credentials {
-                username = 'x-access-token'
+                username = 'JITPACK_TOKEN'
                 password = System.getenv("JITPACK_TOKEN")
             }
         }
