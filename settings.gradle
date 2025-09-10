@@ -16,8 +16,7 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
-        // أضف Jitpack هنا إذا كنت بحاجة إليه
-        maven { url "https://jitpack.io" }
+        // تم حذف Jitpack
     }
 }
 
