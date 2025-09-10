@@ -1,12 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- ثيم التطبيق الرئيسي -->
+    <!-- ثيم التطبيق الرئيسي (قديم/للـ AppCompat) -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
-        <!-- ألوان الثيم -->
         <item name="colorPrimary">@color/primaryColor</item>
         <item name="colorPrimaryDark">@color/primaryDarkColor</item>
         <item name="colorAccent">@color/accentColor</item>
-        <!-- خلفية عامة للتطبيق -->
         <item name="android:windowBackground">@color/backgroundColor</item>
+    </style>
+
+    <!-- ثيم DayNight مستخدم في المانيفست -->
+    <style name="OneUIThemeDayNight" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/primaryColor</item>
+        <item name="colorPrimaryVariant">@color/primaryDarkColor</item>
+        <item name="colorSecondary">@color/accentColor</item>
+        <item name="android:windowBackground">@color/backgroundColor</item>
+        <!-- أضف خصائص إضافية حسب الحاجة -->
     </style>
 </resources>
