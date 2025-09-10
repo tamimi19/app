@@ -16,14 +16,10 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
-            credentials {
-                username = 'JITPACK_TOKEN'
-                password = System.getenv("JITPACK_TOKEN")
-            }
-        }
+        // أضف Jitpack هنا إذا كنت بحاجة إليه
+        maven { url "https://jitpack.io" }
     }
 }
 
 rootProject.name = "OneUIExample"
 include ':app'
-
