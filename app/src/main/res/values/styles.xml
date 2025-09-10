@@ -2,7 +2,11 @@
 <resources>
 
     <!-- ثيم التطبيق الرئيسي يعتمد على AppCompat Light -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    <resources>
+    <style name="OneUITheme.DayNight" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- خصائص الثيم هنا -->
+    </style>
+</resources>
         <!-- ألوان الثيم -->
         <item name="colorPrimary">@color/primaryColor</item>
         <item name="colorPrimaryDark">@color/primaryDarkColor</item>
