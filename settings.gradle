@@ -22,7 +22,7 @@ dependencyResolutionManagement {
             url 'https://jitpack.io'
             credentials {
                 username = 'x-access-token'
-                password = System.getenv("ACCESS_TOKEN")
+                password = System.getenv("JITPACK_TOKEN")
             }
         }
     }
