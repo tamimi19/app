@@ -45,7 +45,6 @@ dependencies {
 
     // مكتبات One UI الأساسية
     implementation 'io.github.oneuiproject.sesl:core:1.3.0'
-    implementation 'io.github.oneuiproject:design:1.2.6'
 
     // مكتبة أيقونات One UI (اختياري لتحسين الواجهة)
     implementation 'io.github.oneuiproject:icons:1.1.0'
