@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
         // (Optional) Set up bottom navigation listener
         BottomNavigationView bottomNav = findViewById(R.id.bottom_nav);
         bottomNav.setOnItemSelectedListener(item -> {
-            // Handle navigation item clicks (placeholder)
+            // Handle navigation item clicks
             int id = item.getItemId();
             if (id == R.id.nav_home) {
                 // TODO: Switch to home content
