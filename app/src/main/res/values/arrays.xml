@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Arrays defining the display names and values for languages -->
+    <string-array name="language_names">
+        <item>@string/english</item>
+        <item>@string/arabic</item>
+    </string-array>
+    <string-array name="language_values">
+        <item>en</item>
+        <item>ar</item>
+    </string-array>
+</resources>
