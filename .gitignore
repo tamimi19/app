@@ -1,4 +1,4 @@
-# ملفات البناء والمخرجات
+# Build output files
 *.apk
 *.ap_
 *.aab
@@ -7,8 +7,8 @@
 .gradle/
 build/
 
-# ملفات نظام التطوير
-.local.properties
+# IDE and local environment
+/local.properties
 /*.iml
 /.idea/
 /captures/
