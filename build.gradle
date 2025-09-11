@@ -1,7 +1,3 @@
-// This is the root build.gradle file.
-// In modern Gradle, this file is often minimal.
-// We declare plugins here and apply them in module-level build files.
 plugins {
-    // Apply the Android Application plugin to subprojects, not the root.
-    id("com.android.application") version "8.3.2" apply false
+    id 'com.android.application' version '8.3.2' apply false
 }
