@@ -38,7 +38,7 @@ android {
 }
 
 dependencies {
-    // One UI core (SESL) libraries (exclude AndroidX as above)
+    // One UI core (SESL) libraries (exclude AndroidX as above)5
     implementation 'io.github.oneuiproject.sesl:appcompat:1.4.0'
     implementation 'io.github.oneuiproject.sesl:core:1.3.0'
     implementation 'io.github.oneuiproject.sesl:customview:1.1.0'
