@@ -1,4 +1,4 @@
-package com.example.myapp; // عدِّل اسم الحزمة بحسب مشروعك
+package com.example.oneui; // عدِّل اسم الحزمة بحسب مشروعك
 
 import android.os.Bundle;
 import androidx.preference.PreferenceFragmentCompat;
