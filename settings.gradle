@@ -1,17 +1,11 @@
-// This file manages settings for the entire project.
-
-// Centralized management for plugin versions
 pluginManagement {
     repositories {
         google()
         mavenCentral()
-        gradlePluginPortal() // Recommended for Gradle plugins
+        gradlePluginPortal()
     }
 }
-
-// Centralized management for project dependencies repositories
 dependencyResolutionManagement {
-    // Enforce that all repositories are declared here
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
         google()
