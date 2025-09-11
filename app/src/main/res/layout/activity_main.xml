@@ -1,17 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<androidx.coordinatorlayout.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
+    <!-- Top app bar (MaterialToolbar) -->
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        style="@style/Widget.MaterialComponents.Toolbar.Primary"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:title="@string/app_name"
+        app:titleTextColor="@color/textPrimary"
+        app:popupTheme="@style/ThemeOverlay.MaterialComponents.Light" />
+
+    <!-- Main content area -->
+    <FrameLayout
+        android:id="@+id/container"
+        android:layout_below="@id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="?attr/actionBarSize"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <!-- Sample content: a TextView and a One UI button -->
+        <LinearLayout
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="16dp">
+            
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hello, One UI!"
+                android:textSize="24sp"
+                android:textColor="@color/textPrimary" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="One UI Button"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/round_button"
+                android:textColor="@android:color/white" />
+        </LinearLayout>
+    </FrameLayout>
+
+    <!-- Bottom navigation bar -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_nav"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello, One UI!"
-        android:textSize="24sp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_margin="16dp"/>
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_gravity="bottom"
+        android:background="?attr/colorPrimary"
+        app:menu="@menu/bottom_nav_menu"
+        app:itemTextColor="@color/textPrimary"
+        app:itemIconTint="@android:color/white" />
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
