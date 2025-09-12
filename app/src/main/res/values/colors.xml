@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- لوحة ألوان One UI -->
     <color name="primaryColor">#0381FE</color>
     <color name="primaryDarkColor">#0072DE</color>
     <color name="accentColor">#3E91FF</color>
     <color name="textPrimary">#000000</color>
     <color name="textSecondary">#666666</color>
     <color name="backgroundColor">#F0F2F5</color>
+    <color name="nav_item_color">#FFFFFFFF</color>
 </resources>
