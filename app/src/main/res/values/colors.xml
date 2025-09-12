@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- One UI color palette -->
+    <!-- لوحة ألوان One UI -->
     <color name="primaryColor">#0381FE</color>
     <color name="primaryDarkColor">#0072DE</color>
     <color name="accentColor">#3E91FF</color>
