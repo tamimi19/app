@@ -7,8 +7,12 @@
     <string name="welcome_message">Welcome to One UI Example!</string>
     <string name="button_label">One UI Button</string>
     <string name="dark_mode">Dark Mode</string>
+    <string name="dark_mode_on">Dark Mode On</string>
+    <string name="dark_mode_off">Dark Mode Off</string>
     <string name="language">Language</string>
     <string name="notifications">Notifications</string>
+    <string name="notifications_on">Notifications On</string>
+    <string name="notifications_off">Notifications Off</string>
     <string name="english">English</string>
     <string name="arabic">Arabic</string>
 </resources>
