@@ -1,26 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
-    <PreferenceCategory android:title="@string/settings">
-        <SwitchPreferenceCompat
-            android:key="pref_dark_mode"
-            android:title="@string/dark_mode"
-            android:defaultValue="false"
-            android:summaryOff="@string/dark_mode_off"
-            android:summaryOn="@string/dark_mode_on"/>
+<PreferenceScreen 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-        <ListPreference
-            android:key="pref_language"
-            android:title="@string/language"
-            android:entries="@array/language_entries"
-            android:entryValues="@array/language_values"
-            android:defaultValue="en"
-            android:dialogTitle="@string/language"/>
+    <!-- مفتاح التبديل للوضع الداكن -->
+    <SwitchPreferenceCompat
+        app:key="dark_mode"
+        app:title="@string/dark_mode"
+        app:defaultValue="false" />
 
-        <SwitchPreferenceCompat
-            android:key="pref_notifications"
-            android:title="@string/notifications"
-            android:defaultValue="true"
-            android:summaryOff="@string/notifications_off"
-            android:summaryOn="@string/notifications_on"/>
-    </PreferenceCategory>
+    <!-- اختيار اللغة (إنجليزي أو عربي) -->
+    <ListPreference
+        app:key="language"
+        app:title="@string/language"
+        android:entries="@array/language_entries"
+        android:entryValues="@array/language_values"
+        app:defaultValue="english" />
+
+    <!-- مفتاح الإشعارات -->
+    <SwitchPreferenceCompat
+        app:key="notifications"
+        app:title="@string/notifications"
+        app:defaultValue="false" />
 </PreferenceScreen>
