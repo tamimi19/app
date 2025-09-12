@@ -7,8 +7,12 @@
     <string name="welcome_message">مرحبًا بك في مثال One UI!</string>
     <string name="button_label">زر One UI</string>
     <string name="dark_mode">الوضع الداكن</string>
+    <string name="dark_mode_on">تم تفعيل الوضع الداكن</string>
+    <string name="dark_mode_off">تم إيقاف الوضع الداكن</string>
     <string name="language">اللغة</string>
     <string name="notifications">الإشعارات</string>
+    <string name="notifications_on">تم تفعيل الإشعارات</string>
+    <string name="notifications_off">تم إيقاف الإشعارات</string>
     <string name="english">الإنجليزية</string>
     <string name="arabic">العربية</string>
 </resources>
