@@ -5,11 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!-- شريط التطبيق العلوي (AppBarLayout) -->
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+        android:layout_height="?attr/actionBarSize">
 
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/toolbar"
@@ -17,26 +15,22 @@
             android:layout_height="match_parent"
             android:background="?attr/colorPrimary"
             android:title="@string/app_name"
-            app:titleTextColor="@color/textPrimary"
-            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+            app:titleTextColor="@color/textPrimary" />
     </com.google.android.material.appbar.AppBarLayout>
 
-    <!-- مساحة الحاوية لعرض الشظايا -->
     <FrameLayout
         android:id="@+id/container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="?attr/actionBarSize"
         app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
-    <!-- شريط التنقل السفلي -->
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_nav"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="56dp"
         android:layout_gravity="bottom"
-        android:background="?attr/colorPrimary"
         app:menu="@menu/bottom_nav_menu"
-        app:itemTextColor="@color/textPrimary"
-        app:itemIconTint="@android:color/white" />
+        android:background="?attr/colorPrimary"
+        app:itemIconTint="@android:color/white"
+        app:itemTextColor="@color/nav_item_color" />
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
