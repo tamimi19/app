@@ -1,47 +1,53 @@
 package com.example.oneui;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentTransaction;
+import androidx.appcompat.app.AppCompatDelegate;
+import androidx.fragment.app.Fragment;
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
-    private SettingsFragment settingsFragment;
-    private HomeFragment homeFragment;
+    public static final String PREFS = "oneui_prefs";
+    public static final String KEY_DARK = "pref_dark_mode";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        // تطبيق وضع الليل المحفوظ قبل setContentView
+        SharedPreferences prefs = getSharedPreferences(PREFS, MODE_PRIVATE);
+        boolean dark = prefs.getBoolean(KEY_DARK, false);
+        AppCompatDelegate.setDefaultNightMode(dark ? AppCompatDelegate.MODE_NIGHT_YES : AppCompatDelegate.MODE_NIGHT_NO);
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // إعداد شريط الأدوات كـ ActionBar
         MaterialToolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        // تهيئة الشظايا
-        settingsFragment = new SettingsFragment();
-        homeFragment = new HomeFragment();
+        // عرض HomeFragment افتراضياً
+        replaceFragment(new HomeFragment());
 
-        // عرض HomeFragment بشكل افتراضي
-        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.replace(R.id.container, homeFragment);
-        transaction.commit();
-
-        // إعداد مستمع اختيار عنصر في قائمة التنقل السفلي
         BottomNavigationView bottomNav = findViewById(R.id.bottom_nav);
         bottomNav.setOnItemSelectedListener(item -> {
             int id = item.getItemId();
-            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
             if (id == R.id.nav_home) {
-                // عرض المحتوى الرئيسي
-                ft.replace(R.id.container, homeFragment);
+                replaceFragment(new HomeFragment());
+                return true;
             } else if (id == R.id.nav_settings) {
-                // عرض شاشة الإعدادات
-                ft.replace(R.id.container, settingsFragment);
+                replaceFragment(new SettingsFragment());
+                return true;
+            } else if (id == R.id.nav_scroll) {
+                replaceFragment(new ScrollMenuFragment());
+                return true;
             }
-            ft.commit();
-            return true;
+            return false;
         });
+    }
+
+    private void replaceFragment(Fragment f) {
+        getSupportFragmentManager().beginTransaction()
+            .replace(R.id.container, f)
+            .commit();
     }
 }
