@@ -1,53 +1,92 @@
 package com.example.oneui;
 
-import android.content.SharedPreferences;
 import android.os.Bundle;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
-import androidx.fragment.app.Fragment;
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.preference.PreferenceManager;
+import android.view.MenuItem;
 import com.google.android.material.appbar.MaterialToolbar;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationView;
 
-public class MainActivity extends AppCompatActivity {
-    public static final String PREFS = "oneui_prefs";
-    public static final String KEY_DARK = "pref_dark_mode";
+/**
+ * MainActivity: شاشة رئيسية تحتوي على درج تنقل (Navigation Drawer) للتنقل بين:
+ * - HomeFragment (الرئيسية)
+ * - ScrollListFragment (قائمة التمرير)
+ * - SettingsFragment (الإعدادات)
+ * تم ضبط Theme وتغيير اللغة في بداية onCreate حسب تفضيلات المستخدم.
+ */
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+    private DrawerLayout drawerLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        // تطبيق وضع الليل المحفوظ قبل setContentView
-        SharedPreferences prefs = getSharedPreferences(PREFS, MODE_PRIVATE);
-        boolean dark = prefs.getBoolean(KEY_DARK, false);
-        AppCompatDelegate.setDefaultNightMode(dark ? AppCompatDelegate.MODE_NIGHT_YES : AppCompatDelegate.MODE_NIGHT_NO);
-
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        // استرجاع إعدادات الثيم (داكن/فاتح) واللغة
+        boolean darkMode = PreferenceManager.getDefaultSharedPreferences(this)
+            .getBoolean("dark_mode", false);
+        if (darkMode) {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+        } else {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+        }
+        String language = PreferenceManager.getDefaultSharedPreferences(this)
+            .getString("language", "english");
+        // تطبيق اللغة المختارة (بسيط)
+        if ("arabic".equals(language)) {
+            LocaleHelper.setLocale(this, "ar");
+        } else {
+            LocaleHelper.setLocale(this, "en");
+        }
 
+        setContentView(R.layout.activity_main);
+        drawerLayout = findViewById(R.id.drawer_layout);
+
+        // إعداد شريط الأدوات كـ ActionBar
         MaterialToolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        // عرض HomeFragment افتراضياً
-        replaceFragment(new HomeFragment());
+        // تفعيل أيقونة الهامبرغر لفتح درج التنقل
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+                this, drawerLayout, toolbar,
+                R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawerLayout.addDrawerListener(toggle);
+        toggle.syncState();
 
-        BottomNavigationView bottomNav = findViewById(R.id.bottom_nav);
-        bottomNav.setOnItemSelectedListener(item -> {
-            int id = item.getItemId();
-            if (id == R.id.nav_home) {
-                replaceFragment(new HomeFragment());
-                return true;
-            } else if (id == R.id.nav_settings) {
-                replaceFragment(new SettingsFragment());
-                return true;
-            } else if (id == R.id.nav_scroll) {
-                replaceFragment(new ScrollMenuFragment());
-                return true;
-            }
-            return false;
-        });
+        // إعداد مستمع اختيارات القائمة
+        NavigationView navView = findViewById(R.id.nav_view);
+        navView.setNavigationItemSelectedListener(this);
+
+        // تحميل الشاشة الافتراضية (HomeFragment)
+        if (savedInstanceState == null) {
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.container, new HomeFragment())
+                    .commit();
+            navView.setCheckedItem(R.id.nav_home);
+        }
     }
 
-    private void replaceFragment(Fragment f) {
-        getSupportFragmentManager().beginTransaction()
-            .replace(R.id.container, f)
-            .commit();
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        // التعامل مع خيارات القائمة في درج التنقل
+        int id = item.getItemId();
+        if (id == R.id.nav_home) {
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.container, new HomeFragment())
+                    .commit();
+        } else if (id == R.id.nav_scroll_list) {
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.container, new ScrollListFragment())
+                    .commit();
+        } else if (id == R.id.nav_settings) {
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.container, new SettingsFragment())
+                    .commit();
+        }
+        drawerLayout.closeDrawer(GravityCompat.START);
+        return true;
     }
 }
