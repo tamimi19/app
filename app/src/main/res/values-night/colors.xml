@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- ألوان الوضع الداكن -->
+    <color name="primaryColor">#0381FE</color>
+    <color name="primaryDarkColor">#0072DE</color>
+    <color name="accentColor">#3E91FF</color>
+    <color name="textPrimary">#FFFFFF</color>
+    <color name="textSecondary">#CCCCCC</color>
+    <color name="backgroundColor">#000000</color>
+</resources>
