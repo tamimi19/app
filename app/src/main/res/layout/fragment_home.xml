@@ -4,21 +4,22 @@
     android:gravity="center"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
+    android:padding="24dp"
     android:background="@color/backgroundColor">
 
     <TextView
+        android:id="@+id/welcome_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello, One UI!"
+        android:text="@string/welcome_message"
         android:textSize="24sp"
-        android:textColor="@color/textPrimary" />
+        android:textColor="@color/textPrimary"
+        android:layout_marginBottom="20dp"/>
 
     <Button
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="One UI Button"
-        android:layout_marginTop="20dp"
+        android:layout_height="48dp"
+        android:text="@string/button_label"
         android:background="@drawable/round_button"
-        android:textColor="@android:color/white" />
+        android:textColor="@android:color/white"/>
 </LinearLayout>
