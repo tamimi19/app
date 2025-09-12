@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Arrays defining the display names and values for languages -->
-    <string-array name="language_names">
+    <string-array name="languages">
         <item>@string/english</item>
         <item>@string/arabic</item>
     </string-array>
