@@ -42,8 +42,9 @@ dependencies {
     implementation 'androidx.recyclerview:recyclerview:1.3.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.2.1'
 
-    // Optional: One UI SESL libraries (keep if you use them)
+    // Optional: SESL libraries (keep if you use One UI SESL)
     implementation 'io.github.oneuiproject.sesl:appcompat:1.4.0'
     implementation 'io.github.oneuiproject.sesl:preference:1.1.0'
+    implementation 'io.github.oneuiproject.sesl:indexscroll:1.0.3' // لإضافة فهرس تمرير جانبي (اختياري)
     implementation 'io.github.oneuiproject:icons:1.1.0'
 }
