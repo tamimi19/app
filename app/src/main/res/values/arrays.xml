@@ -5,7 +5,7 @@
         <item>@string/arabic</item>
     </string-array>
     <string-array name="language_values">
-        <item>en</item>
-        <item>ar</item>
+        <item>english</item>
+        <item>arabic</item>
     </string-array>
 </resources>
