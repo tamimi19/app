@@ -1,16 +1,15 @@
-package com.example.oneui; // عدِّل اسم الحزمة بحسب مشروعك
+package com.example.oneui;
 
 import android.os.Bundle;
 import androidx.preference.PreferenceFragmentCompat;
 
 /**
- * SettingsFragment: extends PreferenceFragmentCompat to display the settings.
- * We use One UI SESL PreferenceFragmentCompat to load preferences from XML.
+ * SettingsFragment: loads preferences from res/xml/preferences.xml
+ * Uses PreferenceFragmentCompat API (provided by the SESL preference artifact).
  */
 public class SettingsFragment extends PreferenceFragmentCompat {
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
-        // Load preferences from the XML resource (res/xml/preferences.xml)
         setPreferencesFromResource(R.xml.preferences, rootKey);
     }
 }
