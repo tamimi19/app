@@ -1,38 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
-
-    <PreferenceCategory
-        android:key="display_category"
-        android:title="@string/settings">
-        <!-- مفتاح الوضع الداكن -->
+    <PreferenceCategory android:title="@string/settings">
         <SwitchPreferenceCompat
-            android:key="dark_mode"
+            android:key="pref_dark_mode"
             android:title="@string/dark_mode"
-            android:summaryOn="@string/dark_mode_on"
-            android:summaryOff="@string/dark_mode_off" />
-    </PreferenceCategory>
+            android:defaultValue="false"
+            android:summaryOff="@string/dark_mode_off"
+            android:summaryOn="@string/dark_mode_on"/>
 
-    <PreferenceCategory
-        android:key="general_category"
-        android:title="@string/language">
-        <!-- مفتاح اختيار اللغة -->
         <ListPreference
-            android:key="language"
+            android:key="pref_language"
             android:title="@string/language"
-            android:entries="@array/languages"
+            android:entries="@array/language_entries"
             android:entryValues="@array/language_values"
-            android:defaultValue="en" />
-    </PreferenceCategory>
+            android:defaultValue="en"
+            android:dialogTitle="@string/language"/>
 
-    <PreferenceCategory
-        android:key="notifications_category"
-        android:title="@string/notifications">
-        <!-- مفتاح الإشعارات -->
         <SwitchPreferenceCompat
-            android:key="notifications"
+            android:key="pref_notifications"
             android:title="@string/notifications"
-            android:summaryOn="@string/notifications_on"
-            android:summaryOff="@string/notifications_off" />
+            android:defaultValue="true"
+            android:summaryOff="@string/notifications_off"
+            android:summaryOn="@string/notifications_on"/>
     </PreferenceCategory>
-
 </PreferenceScreen>
