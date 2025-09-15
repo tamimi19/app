@@ -38,6 +38,12 @@ configurations.all {
     exclude group: 'androidx.drawerlayout', module: 'drawerlayout'
     exclude group: 'androidx.coordinatorlayout', module: 'coordinatorlayout'
     exclude group: 'androidx.swiperefreshlayout', module: 'swiperefreshlayout'
+    exclude group: 'androidx.design', module: 'design'
+    exclude group: 'androidx.icons', module: 'icons'
+    exclude group: 'androidx.apppickerview', module: 'apppickerview'
+    exclude group: 'androidx.indexscroll', module: 'indexscroll'
+    exclude group: 'androidx.picker-color', module: 'picker-color'
+    exclude group: 'androidx.picker-basic', module: 'picker-basic'
 }
 
 dependencies {
