@@ -36,6 +36,7 @@ configurations.all {
 
 dependencies {
     // مكتبة AndroidX
+    implementation 'io.github.oneuiproject.sesl:appcompat:1.4.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     implementation 'io.github.oneuiproject:icons:1.1.0'
     implementation 'io.github.oneuiproject:design:1.2.6'
